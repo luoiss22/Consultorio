@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'Consultorio_app'
+    
 ]
 
 MIDDLEWARE = [
@@ -75,8 +78,13 @@ WSGI_APPLICATION = 'Consultorio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # El motor de base de datos para PostgreSQL
+        'NAME': 'Consultorio',  # Nombre de la base de datos
+        'USER': 'postgres',  # Usuario de la base de datos
+        'PASSWORD': 'root',  # Contraseña del usuario
+        'HOST': 'localhost',  # Dirección del servidor de la base de datos (puede ser 'localhost' o una IP)
+        'PORT': '5433',  # Puerto de la base de datos (el puerto predeterminado de PostgreSQL es 5432)
+
     }
 }
 
